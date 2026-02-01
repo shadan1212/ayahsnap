@@ -1,4 +1,4 @@
-export type dimension = {
+export type Dimension = {
   id: string;
   name: string;
   label: string;
@@ -18,12 +18,7 @@ export const dimensions = [
     label: "IG Feed Portrait",
     aspect: "aspect-[4/5]",
   },
-  {
-    id: "story",
-    name: "Story / Reel (9:16)",
-    label: "TikTok / Stories",
-    aspect: "aspect-[9/16]",
-  },
+
   {
     id: "landscape",
     name: "Landscape (16:9)",

@@ -1,9 +1,12 @@
+import { Dimension } from "@/lib/dimensions";
 import { Theme } from "@/lib/themes";
 import { Verse } from "@/types/verse";
 
 interface Props {
   verse: Verse;
   theme: Theme;
+  dimension: Dimension;
+  fontSize: number;
 }
 
 export function VerseCard({ verse, theme }: Props) {
