@@ -51,7 +51,7 @@ export const themes: Theme[] = [
   {
     id: "clean",
     name: "Minimalist (Cream)",
-    bg: "bg-[#FDFBF7] border-2 border-[#E7E5E4] text-[#44403C]",
+    bg: "bg-[#FDFBF7] border border-[#E7E5E4] text-[#44403C]",
     accent: "text-[#78716C]",
   },
   {

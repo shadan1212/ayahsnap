@@ -22,7 +22,7 @@ export function FontSlider({ value, onFontChange }: Props) {
           type="range"
           min="0.5"
           max="1.5"
-          step="0.05"
+          step="0.01"
           value={value}
           onChange={(e) => onFontChange(parseFloat(e.target.value))}
           className="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-stone-600"
