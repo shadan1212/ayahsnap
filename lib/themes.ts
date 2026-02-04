@@ -7,6 +7,12 @@ export type Theme = {
 
 export const themes: Theme[] = [
   {
+    id: "royal",
+    name: "Royal (Gold/Black)",
+    bg: "bg-gradient-to-tr from-gray-900 to-gray-800 text-amber-400 border-2 border-amber-900/50",
+    accent: "text-amber-200",
+  },
+  {
     id: "midnight",
     name: "Midnight (Purple/Dark)",
     bg: "bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white",
@@ -41,12 +47,6 @@ export const themes: Theme[] = [
     name: "Dusk (Pink/Indigo)",
     bg: "bg-gradient-to-bl from-indigo-900 via-purple-800 to-pink-800 text-pink-50",
     accent: "text-pink-300",
-  },
-  {
-    id: "royal",
-    name: "Royal (Gold/Black)",
-    bg: "bg-gradient-to-tr from-gray-900 to-gray-800 text-amber-400 border-2 border-amber-900/50",
-    accent: "text-amber-200",
   },
   {
     id: "clean",

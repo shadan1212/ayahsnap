@@ -20,7 +20,7 @@ export function DimensionSelect({ selected, onDimensionChange }: Props) {
             const dimension = dimensions.find((d) => d.id === e.target.value);
             if (dimension) onDimensionChange(dimension);
           }}
-          className="w-full p-3 bg-white border border-stone-200 rounded-xl focus:ring-2 focus:ring-stone-400 outline-none appearance-none cursor-pointer text-stone-700"
+          className="w-full p-3 font-outfit bg-white border border-stone-200 rounded-xl focus:ring-2 focus:ring-stone-400 outline-none appearance-none cursor-pointer text-stone-700"
         >
           {dimensions.map((d) => (
             <option key={d.id} value={d.id}>

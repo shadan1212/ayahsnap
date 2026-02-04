@@ -13,7 +13,7 @@ export function ChapterSelect({ value, onChange }: Props) {
       </label>
       <div className="relative">
         <select
-          className="w-full p-3 bg-white border border-stone-200 rounded-xl focus:ring-2 focus:ring-stone-400 focus:border-stone-400 outline-none transition-all appearance-none cursor-pointer text-stone-700"
+          className="w-full p-3 font-outfit bg-white border border-stone-200 rounded-xl focus:ring-2 focus:ring-stone-400 focus:border-stone-400 outline-none transition-all appearance-none cursor-pointer text-stone-700"
           value={value}
           onChange={(e) => onChange(Number(e.target.value))}
         >

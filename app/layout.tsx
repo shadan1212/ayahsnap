@@ -5,6 +5,7 @@ import {
   Playfair_Display,
   Scheherazade_New,
   Inter,
+  Outfit,
 } from "next/font/google";
 import "./globals.css";
 
@@ -21,6 +22,12 @@ const geistMono = Geist_Mono({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -49,8 +56,9 @@ export default function RootLayout({
         className={`${geistSans.variable} 
         ${geistMono.variable} 
         ${inter.variable} 
-        ${playfair.variable} 
-        ${scheherazade.variable} 
+        ${playfair.variable}
+        ${outfit.variable} 
+        ${scheherazade.variable}
         antialiased`}
       >
         {children}

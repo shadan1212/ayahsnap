@@ -1,3 +1,4 @@
+import { Chapter } from "@/lib/chapters";
 import { Dimension } from "@/lib/dimensions";
 import { Theme } from "@/lib/themes";
 import { Verse } from "@/types/verse";
@@ -8,10 +9,11 @@ interface Props {
   theme: Theme;
   dimensionSize: Dimension;
   fontSize: number;
+  chapterData: Chapter;
 }
 
 const VerseCard = React.forwardRef<HTMLDivElement, Props>(
-  ({ verse, theme, dimensionSize, fontSize }, ref) => {
+  ({ verse, theme, dimensionSize, fontSize, chapterData }, ref) => {
     return (
       <div
         ref={ref}
@@ -31,8 +33,8 @@ const VerseCard = React.forwardRef<HTMLDivElement, Props>(
 
         <div className="flex flex-col h-full w-full justify-between items-center z-10">
           <div className="flex flex-col items-center gap-2 opacity-70 mt-2">
-            <span className="uppercase tracking-[0.25em] text-[10px] md:text-xs font-semibold font-inter">
-              Surah {verse.chapterId}
+            <span className="uppercase tracking-[0.25em] text-[10px] md:text-xs font-semibold font-outfit">
+              Surah {chapterData.name}
             </span>
             <div
               className={`h-px w-8 ${theme.id === "clean" ? "bg-stone-300" : "bg-white/40"}`}
@@ -44,7 +46,7 @@ const VerseCard = React.forwardRef<HTMLDivElement, Props>(
               className="font-arabic leading-[1.6] md:leading-[1.8] dir-rtl text-center px-2"
               style={{ fontSize: `${1.5 * fontSize}rem` }}
             >
-              {verse.arabic}
+              {verse.arabic} <span className="text-xs">۝</span>
             </p>
             <p
               className="font-light italic opacity-90 leading-relaxed max-w-[90%] font-inter"

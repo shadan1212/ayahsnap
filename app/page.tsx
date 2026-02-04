@@ -40,17 +40,18 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+    handlefetchVerse();
+  }, []);
+
   const handleDownload = async () => {
     if (!cardRef.current) return;
     await downloadSnapshot(cardRef.current);
   };
 
   const maxVerse = chapters.find((c) => c.id === chapter)?.totalVerses || 1;
-  console.log(maxVerse);
 
-  // useEffect(() => {
-  //   handlefetch();
-  // }, []);
+  const selectedChapter = chapters.find((c) => c.id === chapter) || chapters[0];
 
   return (
     <div className="min-h-screen bg-[#FAF7F2] text-stone-800 font-sans selection:bg-stone-200 selection:text-stone-900">
@@ -60,18 +61,7 @@ export default function Home() {
         <HeroSection />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-20">
-          <div className="h-full">
-            {verse && (
-              <VerseCard
-                ref={cardRef}
-                verse={verse}
-                theme={theme}
-                dimensionSize={dimension}
-                fontSize={fontSizeScale}
-              />
-            )}
-          </div>
-          <div className="flex flex-col space-y-4 h-full">
+          <div className="flex flex-col space-y-4 border border-gray-300 p-4 h-full">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -118,6 +108,23 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="h-full"
+          >
+            {verse && (
+              <VerseCard
+                ref={cardRef}
+                verse={verse}
+                theme={theme}
+                dimensionSize={dimension}
+                fontSize={fontSizeScale}
+                chapterData={selectedChapter}
+              />
+            )}
+          </motion.div>
         </div>
         {verse && (
           <motion.button

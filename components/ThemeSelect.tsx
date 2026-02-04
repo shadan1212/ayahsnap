@@ -14,7 +14,7 @@ export function ThemeSelect({ selected, onThemeChange }: Props) {
 
       <div className="relative">
         <select
-          className="w-full p-3 bg-white border border-stone-200 rounded-xl focus:ring-2 focus:ring-stone-400 outline-none appearance-none cursor-pointer text-stone-700"
+          className="w-full p-3 font-outfit bg-white border border-stone-200 rounded-xl focus:ring-2 focus:ring-stone-400 outline-none appearance-none cursor-pointer text-stone-700"
           value={selected.id}
           onChange={(e) => {
             const theme = themes.find((t) => t.id === e.target.value);
