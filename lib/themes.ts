@@ -12,6 +12,12 @@ export const themes: Theme[] = [
     bg: "bg-gradient-to-tr from-gray-900 to-gray-800 text-amber-400 border-2 border-amber-900/50",
     accent: "text-amber-200",
   },
+  // {
+  //   id: "clean",
+  //   name: "Minimalist (Cream)",
+  //   bg: "bg-[#FDFBF7] border border-[#E7E5E4] text-[#44403C]",
+  //   accent: "text-[#78716C]",
+  // },
   {
     id: "midnight",
     name: "Midnight (Purple/Dark)",
@@ -47,12 +53,6 @@ export const themes: Theme[] = [
     name: "Dusk (Pink/Indigo)",
     bg: "bg-gradient-to-bl from-indigo-900 via-purple-800 to-pink-800 text-pink-50",
     accent: "text-pink-300",
-  },
-  {
-    id: "clean",
-    name: "Minimalist (Cream)",
-    bg: "bg-[#FDFBF7] border border-[#E7E5E4] text-[#44403C]",
-    accent: "text-[#78716C]",
   },
   {
     id: "paper",

@@ -4,6 +4,10 @@ import { Theme } from "@/lib/themes";
 import { Verse } from "@/types/verse";
 import React from "react";
 
+const toArabicNumerals = (n: number) => {
+  return n.toString().replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[parseInt(d)]);
+};
+
 interface Props {
   verse: Verse;
   theme: Theme;
@@ -46,10 +50,15 @@ const VerseCard = React.forwardRef<HTMLDivElement, Props>(
               className="font-arabic leading-[1.6] md:leading-[1.8] dir-rtl text-center px-2"
               style={{ fontSize: `${1.5 * fontSize}rem` }}
             >
-              {verse.arabic} <span className="text-xs">۝</span>
+              {verse.arabic}
+              <span className="font-arabic text-sm text-nowrap">
+                {"\u06DD"}
+                {toArabicNumerals(verse.chapterId)}
+              </span>
             </p>
+
             <p
-              className="font-light italic opacity-90 leading-relaxed max-w-[90%] font-inter"
+              className="font-medium italic opacity-90 leading-relaxed max-w-[90%] font-outfit"
               style={{ fontSize: `${1 * fontSize}rem` }}
             >
               "{verse.translation}"

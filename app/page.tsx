@@ -16,6 +16,7 @@ import { dimensions } from "@/lib/dimensions";
 import { DimensionSelect } from "@/components/DimensionSelect";
 import { FontSlider } from "@/components/FontSlider";
 import { downloadSnapshot } from "@/lib/snapshot";
+import { getRandomVerse } from "@/lib/randomVerse";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -27,6 +28,13 @@ export default function Home() {
   const [verse, setVerse] = useState<any>(null);
 
   const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleRandomVerse = async () => {
+    const { chapter, verseNumber, verseData } = await getRandomVerse();
+    setChapter(chapter);
+    setVerseNumber(verseNumber);
+    setVerse(verseData);
+  };
 
   const handlefetchVerse = async () => {
     setLoading(true);
@@ -55,13 +63,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#FAF7F2] text-stone-800 font-sans selection:bg-stone-200 selection:text-stone-900">
-      <Navbar />
+      <Navbar onRandomVerse={handleRandomVerse} loading={loading} />
 
       <main className="max-w-7xl mx-auto px-4 py-8">
         <HeroSection />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-20">
-          <div className="flex flex-col space-y-4 border border-gray-300 p-4 h-full">
+          <div className="flex flex-col space-y-4 border border-[#E7E5E4] p-4 h-full">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
